@@ -5,8 +5,9 @@ definePageMeta({
 </script>
 
 <template>
-  <div>
-    <h1>Login</h1>
-    <!-- Форма аутентификации -->
+  <div class="h-[100vh] bg-[red] flex items-center justify-center">
+    <div class="">
+
+    </div>
   </div>
 </template>

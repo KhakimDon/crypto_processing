@@ -1,6 +1,6 @@
 <script setup>
 definePageMeta({
-  layout: 'user',
+  layout: 'account',
   middleware: 'auth' // Подключаем middleware 'auth'
 
 })
@@ -8,7 +8,7 @@ definePageMeta({
 
 <template>
   <div>
-    <h1>User Dashboard</h1>
+    <h1 class="bg-[var(--main)] font-[Montserrat]" >Trader Dashboard</h1>
     <!-- Контент для пользователя -->
   </div>
 </template>
