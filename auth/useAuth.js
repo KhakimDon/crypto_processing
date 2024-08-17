@@ -1,19 +1,29 @@
-import { useState } from "#app";
+import { useState, useCookie } from "#app";
 
 export function useAuth() {
-  // Используем useState для хранения состояния аутентификации и роли
-  const role = useState("role", () => 'trader'); // Роль пользователя (null, 'trader', 'admin')
+  const myCookie = useCookie("my-cookie-name");
 
-  // Функция для аутентификации пользователя
-  function login(password) {
-    if (password === "trader-password") {
+  // Используем useState для хранения состояния аутентификации и роли
+  const role = useState("role", () => {
+    if(myCookie == null){
+      return null
+    }else{
+      return myCookie.value
+    }
+  });
+
+  function login(login, password) {
+    if (password === "trader1234" && login === "trader1") {
       role.value = "trader";
+      myCookie.value = "trader"
       return true;
-    } else if (password === "admin-password") {
+    } else if (password === "admin1234" && login === "admin1") {
       role.value = "admin";
+      myCookie.value = "admin"
       return true;
     } else {
       role.value = null;
+      myCookie.value = null
       return false;
     }
   }

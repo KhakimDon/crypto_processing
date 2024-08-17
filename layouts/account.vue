@@ -1,6 +1,6 @@
 <template>
-  <div class="account-layout">
-    <header> <!-- Заголовок для пользователя --> </header>
+  <div class="account-layout min-h-[100vh] bg-[blue]">
+    <trader-header/>
     <NuxtPage />
     <footer> <!-- Футер --> </footer>
   </div>
