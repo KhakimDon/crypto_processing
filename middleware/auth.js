@@ -14,4 +14,9 @@ export default defineNuxtRouteMiddleware((to, from) => {
   if (to.path === "/account" && role.value !== "trader") {
     return navigateTo("/admin"); // Перенаправление на страницу админа, если роль не 'trader'
   }
+
+  if (to.path === "/account/allcards" && role.value !== "trader") {
+    return navigateTo("/admin"); // Перенаправление на страницу админа, если роль не 'trader'
+  }
+
 });

@@ -8,3 +8,10 @@
   --shadows: #d7deec;
   --white-text: white;
 }
+
+*{
+  caret-color: transparent;
+}
+input{
+  caret-color: black;
+}

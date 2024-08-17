@@ -3,12 +3,14 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   app: {
     head: {
       title: "My Nuxt 3 App",
@@ -17,4 +19,5 @@ export default defineNuxtConfig({
       ],
     },
   },
+  modules: ['@pinia/nuxt'],
 });

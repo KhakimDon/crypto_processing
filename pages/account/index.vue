@@ -7,6 +7,6 @@ definePageMeta({
 
 <template>
   <div>
-    <!-- Контент для пользователя -->
+    <h1>asdads</h1>
   </div>
 </template>

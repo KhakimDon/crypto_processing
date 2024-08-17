@@ -54,16 +54,16 @@ function check_error(text) {
         <div class="h-[50px] w-[50px] bg-[transparent] border-[5px] border-[var(--target-bg)]"></div>
         <h1 class="font-[Montserrat] font-[700] text-[26px]">Payment System</h1>
       </div>
-      <form @submit.prevent="check()"
+      <form :class="{'error-anim': error}" @submit.prevent="check()"
         class="w-[100%] shadow-xl shadow-[var(--shadows)] p-[20px] flex font-[Montserrat] flex-col items-center bg-[var(--blocks-bg)] rounded-[10px]">
         <h2 class="font-[600] text-[var(--target-txt)] text-[22px]">Авторизация</h2>
         <div class="flex flex-col gap-[3px] w-[100%] mt-[20px]">
-          <label for="username">Имя пользователя:</label>
-          <input v-model="username" id="username" class="input font-[500] border-[1px] border-[#acacac]" type="text">
+          <label :class="{'text-[red]': error}" for="username">Имя пользователя:</label>
+          <input :class="{'border-[red]': error}" v-model="username" id="username" class="input font-[500] border-[1px] border-[#acacac]" type="text">
         </div>
         <div class="flex flex-col gap-[3px] w-[100%] mt-[20px]">
-          <label for="password">Пароль:</label>
-          <input v-model="password" id="password" class="input font-[500] border-[1px] border-[#acacac]"
+          <label :class="{'text-[red]': error}" for="password">Пароль:</label>
+          <input :class="{'border-[red]': error}" v-model="password" id="password" class="input font-[500] border-[1px] border-[#acacac]"
             type="password">
         </div>
         <button class="btn bg-[var(--target-bg)] text-[var(--white-text)] w-[100%] mt-[20px] text-[16px]">Вход</button>
@@ -71,3 +71,17 @@ function check_error(text) {
     </div>
   </div>
 </template>
+
+
+<style>
+.error-anim{
+  animation: shake 0.5s ease;
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+</style>
