@@ -339,8 +339,8 @@ const teams = ref([
                             <th class="text-[17px] font-[Montserrat] text-[var(--target-txt)] max-w-[100px]"></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr v-for="item of teams" :key="item.id">
+                    <tbody class="zebra-table-admin">
+                        <tr class="duration-[.2s]" v-for="item of teams" :key="item.id">
                             <td class="text-[17px] font-[Montserrat] text-[var(--target-txt)]">{{ item.me }}</td>
                             <td class="text-[17px] font-[Montserrat] text-[var(--target-txt)]">{{ item.in }}</td>
                             <td class="text-[17px] font-[Montserrat] text-[var(--target-txt)]">
@@ -371,5 +371,11 @@ const teams = ref([
 <style scoped>
 .activebutton {
     background: var(--target-bg);
+}
+.zebra-table-admin tr:hover{
+    background: var(--target-bg);
+}
+.zebra-table-admin tr:hover td {
+    color: white;
 }
 </style>
